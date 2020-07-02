@@ -16,7 +16,11 @@ def run_game():
 
     # create a new ship
     ship = Ship(ai_settings, screen)
-    alien = Alien(ai_settings, screen)
+
+    aliens = Group()
+
+    # create alien's group
+    gf.create_fleet(ai_settings, screen, ship,aliens)
 
     # create a group to store the bullet
     bullets = Group()
@@ -33,7 +37,7 @@ def run_game():
 
         # redraw screen every circulation
         # let last screen be visible
-        gf.update_screen(ai_settings, screen, ship, alien, bullets)
+        gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 
 
 if __name__ == '__main__':
